@@ -8,7 +8,7 @@ import { projectPath } from '../components/Common';
 
 function Search() {
     const navigate = useNavigate();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const [err, setErr] = useState('');
     const initial = { 'translateY': "-30%" };
     const exit = { 'translateY': "-30%", opacity: 0 };
