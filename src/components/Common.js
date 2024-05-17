@@ -1,7 +1,7 @@
 import axios from 'axios';
-export const projectPath = '/practice-react-ghapi';
+export const projectPath = '';
 export const API_URL = 'https://api.github.com/users/';
-export const API_KEY = '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';
+export const API_KEY = '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';
 
 export const variants = {
     initial: {
@@ -38,7 +38,7 @@ export const getUser = async (login, len = 5) => {
     try {
         const request = {
             url: `${API_URL}${login}`,
-            //headers: { Authorization: `Bearer ${API_KEY}` }
+            headers: { Authorization: `Bearer ${API_KEY}` }
         };
         const user = await axios(request);
         const repos = await axios({ ...request, url: user.data.repos_url });
