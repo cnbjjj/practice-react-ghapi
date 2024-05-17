@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const projectPath = '';
 export const API_URL = 'https://api.github.com/users/';
-export const API_KEY = '';
+//export const API_KEY = '';
 
 export const variants = {
     initial: {
