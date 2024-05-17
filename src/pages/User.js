@@ -16,7 +16,7 @@ function User() {
             getUser(params.login).then(setUser).catch(error => navigate(`${projectPath}/`));
         else
             setUser(location.state);
-    }, [location.state]);
+    }, [location.state, navigate, params.login]);
 
     return (
         user &&
