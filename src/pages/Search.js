@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { variants, getUser, vars } from '../components/Common';
 import { motion as m } from 'framer-motion';
+import { projectPath } from '../components/Common';
 
 function Search() {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Search() {
 
     const onSubmit = (data) => {
         getUser(data.login).then(user =>
-            navigate(`/user/${user.login}`, { state: user })
+            navigate(`${projectPath}/user/${user.login}`, { state: user })
         ).catch(error =>
             setErr({ code: error.status, message: error.data.message })
         );

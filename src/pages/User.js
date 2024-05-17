@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
-import { variants, getUser, vars } from '../components/Common';
+import { variants, getUser, vars, projectPath } from '../components/Common';
 import Repo from '../components/Repo';
 import { motion as m } from 'framer-motion';
 
@@ -11,9 +11,9 @@ function User() {
     const [user, setUser] = useState();
 
     useEffect(() => {
-        if (!params.login) navigate('/');
+        if (!params.login) navigate(`${projectPath}/`);
         if (!location.state)
-            getUser(params.login).then(setUser).catch(error => navigate('/'));
+            getUser(params.login).then(setUser).catch(error => navigate(`${projectPath}/`));
         else
             setUser(location.state);
     }, []);
